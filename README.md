@@ -1,3 +1,17 @@
+# Imply Releases
+
+To create a new build to be used in Imply releases, checkout the release branch (eg: 3.10.6.Final-iap), then run
+
+```
+mvn -DreleaseVersion=<RELEASE_VERSION> -DdevelopmentVersion=<DEV_VERSION>-SNAPSHOT -DpushChanges=false -Dgpg.skip -Darguments="-Dgpg.skip" clean release:clean release:prepare
+git push imply netty-<RELEASE_VERSION>
+git push imply <RELEASE_BRANCH>
+```
+
+This will run all tests, and takes about 3.5 minutes to run.
+
+The tag can now be used in the distribution repo when creating an Imply release.
+
 # Netty Project
 
 Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients.
