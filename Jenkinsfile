@@ -28,7 +28,7 @@ pipeline {
 
         stage ('Publish') {
             when {
-                branch: "${RELEASE_BRANCH}"
+                branch "${RELEASE_BRANCH}"
             }
             steps {
                 sh """
