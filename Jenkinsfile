@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 sh """
-                    docker run -v ${WORKSPACE}/.m2:/root/.m2 -v ${WORKSPACE}:/app $DOCKER_REPO/$IMAGE jfrog rt mvn install
+                    docker run -v ${WORKSPACE}/.m2:/root/.m2 -v ${WORKSPACE}:/app $DOCKER_REPO/$IMAGE jfrog rt mvn install -Dmaven.test.skip
                 """
             }
         }
