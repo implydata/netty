@@ -1,3 +1,48 @@
+# Imply Maven Repository
+
+Update your projects to use Imply netty artifact stored in Imply Artifactory.
+
+### ~/.m2/settings.xml
+
+```
+    <servers>
+        <server>
+            <username>eng</username>
+            <password>AP8cigvgtfjXGXLig7xcFUCWqJG</password>
+            <id>repo.qa.imply.io</id>
+        </server>
+    </servers>
+```
+
+### pom.xml (in implydata/druid project, for example)
+
+```
+...
+
+    <dependencies>
+    ...
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>3.10.6.Final-iap3</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>repo.qa.imply.io</id>
+            <name>libs-release</name>
+            <url>https://repo.qa.imply.io:443/artifactory/libs-release</url>
+        </repository>
+    </repositories>
+</project>
+```
+
+
+
 # Imply Releases
 
 To create a new build to be used in Imply releases, checkout the release branch (eg: 3.10.6.Final-iap), then run
