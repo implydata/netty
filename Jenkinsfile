@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_REPO="repo.qa.imply.io/docker"
-        IMAGE="imply-docker/jfrog-mvn-java8:20201029.064540"
+        IMAGE="imply-docker/jfrog-mvn-java8:20201029.080735"
         RELEASE_BRANCH="3.10.6.Final-iap"
     }
 
