@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_REPO="implydata.jfrog.io/docker-local"
-        IMAGE="imply-docker/jfrog-mvn-java8:20201014.021741"
+        DOCKER_REPO="repo.qa.imply.io/docker"
+        IMAGE="imply-docker/jfrog-mvn-java8:20201029.064540"
         RELEASE_BRANCH="3.10.6.Final-iap"
     }
 
     stages {
         stage('Pull Image') {
             steps {
-                withDockerRegistry(url: "$DOCKER_REPO", credentialsId: "implydata.jfrog.io") {
+                withDockerRegistry(url: "https://$DOCKER_REPO", credentialsId: "repo.qa.imply.io") {
                     sh "docker pull $DOCKER_REPO/$IMAGE"
                 }
             }
