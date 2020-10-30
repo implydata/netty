@@ -5,6 +5,9 @@ Update your projects to use Imply netty artifact stored in Imply Artifactory.
 ### ~/.m2/settings.xml
 
 ```
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    ...
     <servers>
         <server>
             <username>eng</username>
@@ -12,6 +15,8 @@ Update your projects to use Imply netty artifact stored in Imply Artifactory.
             <id>repo.qa.imply.io</id>
         </server>
     </servers>
+    ...
+</settings>
 ```
 
 ### pom.xml (in implydata/druid project, for example)
